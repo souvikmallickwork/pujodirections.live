@@ -1,0 +1,721 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>Pujo Directions</title><style>
+/* cspell:disable-file */
+/* webkit printing magic: print all background colors */
+html {
+	-webkit-print-color-adjust: exact;
+}
+* {
+	box-sizing: border-box;
+	-webkit-print-color-adjust: exact;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+@media only screen {
+	body {
+		margin: 2em auto;
+		max-width: 900px;
+		color: rgb(55, 53, 47);
+	}
+}
+
+body {
+	line-height: 1.5;
+	white-space: pre-wrap;
+}
+
+a,
+a.visited {
+	color: inherit;
+	text-decoration: underline;
+}
+
+.pdf-relative-link-path {
+	font-size: 80%;
+	color: #444;
+}
+
+h1,
+h2,
+h3 {
+	letter-spacing: -0.01em;
+	line-height: 1.2;
+	font-weight: 600;
+	margin-bottom: 0;
+}
+
+.page-title {
+	font-size: 2.5rem;
+	font-weight: 700;
+	margin-top: 0;
+	margin-bottom: 0.75em;
+}
+
+h1 {
+	font-size: 1.875rem;
+	margin-top: 1.875rem;
+}
+
+h2 {
+	font-size: 1.5rem;
+	margin-top: 1.5rem;
+}
+
+h3 {
+	font-size: 1.25rem;
+	margin-top: 1.25rem;
+}
+
+.source {
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	padding: 1.5em;
+	word-break: break-all;
+}
+
+.callout {
+	border-radius: 3px;
+	padding: 1rem;
+}
+
+figure {
+	margin: 1.25em 0;
+	page-break-inside: avoid;
+}
+
+figcaption {
+	opacity: 0.5;
+	font-size: 85%;
+	margin-top: 0.5em;
+}
+
+mark {
+	background-color: transparent;
+}
+
+.indented {
+	padding-left: 1.5em;
+}
+
+hr {
+	background: transparent;
+	display: block;
+	width: 100%;
+	height: 1px;
+	visibility: visible;
+	border: none;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+img {
+	max-width: 100%;
+}
+
+@media only print {
+	img {
+		max-height: 100vh;
+		object-fit: contain;
+	}
+}
+
+@page {
+	margin: 1in;
+}
+
+.collection-content {
+	font-size: 0.875rem;
+}
+
+.column-list {
+	display: flex;
+	justify-content: space-between;
+}
+
+.column {
+	padding: 0 1em;
+}
+
+.column:first-child {
+	padding-left: 0;
+}
+
+.column:last-child {
+	padding-right: 0;
+}
+
+.table_of_contents-item {
+	display: block;
+	font-size: 0.875rem;
+	line-height: 1.3;
+	padding: 0.125rem;
+}
+
+.table_of_contents-indent-1 {
+	margin-left: 1.5rem;
+}
+
+.table_of_contents-indent-2 {
+	margin-left: 3rem;
+}
+
+.table_of_contents-indent-3 {
+	margin-left: 4.5rem;
+}
+
+.table_of_contents-link {
+	text-decoration: none;
+	opacity: 0.7;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+}
+
+table,
+th,
+td {
+	border: 1px solid rgba(55, 53, 47, 0.09);
+	border-collapse: collapse;
+}
+
+table {
+	border-left: none;
+	border-right: none;
+}
+
+th,
+td {
+	font-weight: normal;
+	padding: 0.25em 0.5em;
+	line-height: 1.5;
+	min-height: 1.5em;
+	text-align: left;
+}
+
+th {
+	color: rgba(55, 53, 47, 0.6);
+}
+
+ol,
+ul {
+	margin: 0;
+	margin-block-start: 0.6em;
+	margin-block-end: 0.6em;
+}
+
+li > ol:first-child,
+li > ul:first-child {
+	margin-block-start: 0.6em;
+}
+
+ul > li {
+	list-style: disc;
+}
+
+ul.to-do-list {
+	padding-inline-start: 0;
+}
+
+ul.to-do-list > li {
+	list-style: none;
+}
+
+.to-do-children-checked {
+	text-decoration: line-through;
+	opacity: 0.375;
+}
+
+ul.toggle > li {
+	list-style: none;
+}
+
+ul {
+	padding-inline-start: 1.7em;
+}
+
+ul > li {
+	padding-left: 0.1em;
+}
+
+ol {
+	padding-inline-start: 1.6em;
+}
+
+ol > li {
+	padding-left: 0.2em;
+}
+
+.mono ol {
+	padding-inline-start: 2em;
+}
+
+.mono ol > li {
+	text-indent: -0.4em;
+}
+
+.toggle {
+	padding-inline-start: 0em;
+	list-style-type: none;
+}
+
+/* Indent toggle children */
+.toggle > li > details {
+	padding-left: 1.7em;
+}
+
+.toggle > li > details > summary {
+	margin-left: -1.1em;
+}
+
+.selected-value {
+	display: inline-block;
+	padding: 0 0.5em;
+	background: rgba(206, 205, 202, 0.5);
+	border-radius: 3px;
+	margin-right: 0.5em;
+	margin-top: 0.3em;
+	margin-bottom: 0.3em;
+	white-space: nowrap;
+}
+
+.collection-title {
+	display: inline-block;
+	margin-right: 1em;
+}
+
+.page-description {
+    margin-bottom: 2em;
+}
+
+.simple-table {
+	margin-top: 1em;
+	font-size: 0.875rem;
+	empty-cells: show;
+}
+.simple-table td {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table th {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table-header-color {
+	background: rgb(247, 246, 243);
+	color: black;
+}
+.simple-table-header {
+	font-weight: 500;
+}
+
+time {
+	opacity: 0.5;
+}
+
+.icon {
+	display: inline-block;
+	max-width: 1.2em;
+	max-height: 1.2em;
+	text-decoration: none;
+	vertical-align: text-bottom;
+	margin-right: 0.5em;
+}
+
+img.icon {
+	border-radius: 3px;
+}
+
+.user-icon {
+	width: 1.5em;
+	height: 1.5em;
+	border-radius: 100%;
+	margin-right: 0.5rem;
+}
+
+.user-icon-inner {
+	font-size: 0.8em;
+}
+
+.text-icon {
+	border: 1px solid #000;
+	text-align: center;
+}
+
+.page-cover-image {
+	display: block;
+	object-fit: cover;
+	width: 100%;
+	max-height: 30vh;
+}
+
+.page-header-icon {
+	font-size: 3rem;
+	margin-bottom: 1rem;
+}
+
+.page-header-icon-with-cover {
+	margin-top: -0.72em;
+	margin-left: 0.07em;
+}
+
+.page-header-icon img {
+	border-radius: 3px;
+}
+
+.link-to-page {
+	margin: 1em 0;
+	padding: 0;
+	border: none;
+	font-weight: 500;
+}
+
+p > .user {
+	opacity: 0.5;
+}
+
+td > .user,
+td > time {
+	white-space: nowrap;
+}
+
+input[type="checkbox"] {
+	transform: scale(1.5);
+	margin-right: 0.6em;
+	vertical-align: middle;
+}
+
+p {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.image {
+	border: none;
+	margin: 1.5em 0;
+	padding: 0;
+	border-radius: 0;
+	text-align: center;
+}
+
+.code,
+code {
+	background: rgba(135, 131, 120, 0.15);
+	border-radius: 3px;
+	padding: 0.2em 0.4em;
+	border-radius: 3px;
+	font-size: 85%;
+	tab-size: 2;
+}
+
+code {
+	color: #eb5757;
+}
+
+.code {
+	padding: 1.5em 1em;
+}
+
+.code-wrap {
+	white-space: pre-wrap;
+	word-break: break-all;
+}
+
+.code > code {
+	background: none;
+	padding: 0;
+	font-size: 100%;
+	color: inherit;
+}
+
+blockquote {
+	font-size: 1.25em;
+	margin: 1em 0;
+	padding-left: 1em;
+	border-left: 3px solid rgb(55, 53, 47);
+}
+
+.bookmark {
+	text-decoration: none;
+	max-height: 8em;
+	padding: 0;
+	display: flex;
+	width: 100%;
+	align-items: stretch;
+}
+
+.bookmark-title {
+	font-size: 0.85em;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	height: 1.75em;
+	white-space: nowrap;
+}
+
+.bookmark-text {
+	display: flex;
+	flex-direction: column;
+}
+
+.bookmark-info {
+	flex: 4 1 180px;
+	padding: 12px 14px 14px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.bookmark-image {
+	width: 33%;
+	flex: 1 1 180px;
+	display: block;
+	position: relative;
+	object-fit: cover;
+	border-radius: 1px;
+}
+
+.bookmark-description {
+	color: rgba(55, 53, 47, 0.6);
+	font-size: 0.75em;
+	overflow: hidden;
+	max-height: 4.5em;
+	word-break: break-word;
+}
+
+.bookmark-href {
+	font-size: 0.75em;
+	margin-top: 0.25em;
+}
+
+.sans { font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+.code { font-family: "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace; }
+.serif { font-family: Lyon-Text, Georgia, ui-serif, serif; }
+.mono { font-family: iawriter-mono, Nitti, Menlo, Courier, monospace; }
+.pdf .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK JP'; }
+.pdf:lang(zh-CN) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC'; }
+.pdf:lang(zh-TW) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK TC'; }
+.pdf:lang(ko-KR) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK KR'; }
+.pdf .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK JP'; }
+.pdf:lang(zh-CN) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK SC'; }
+.pdf:lang(zh-TW) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK TC'; }
+.pdf:lang(ko-KR) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK KR'; }
+.pdf .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.highlight-default {
+	color: rgba(55, 53, 47, 1);
+}
+.highlight-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.highlight-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.highlight-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.highlight-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.highlight-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.highlight-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.highlight-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.highlight-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.highlight-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.highlight-default_background {
+	color: rgba(55, 53, 47, 1);
+}
+.highlight-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.highlight-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.highlight-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.highlight-yellow_background {
+	background: rgba(251, 237, 214, 1);
+}
+.highlight-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.highlight-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.highlight-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.highlight-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.highlight-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.block-color-default {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.block-color-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.block-color-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.block-color-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.block-color-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.block-color-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.block-color-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.block-color-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.block-color-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.block-color-default_background {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.block-color-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.block-color-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.block-color-yellow_background {
+	background: rgba(251, 237, 214, 1);
+}
+.block-color-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.block-color-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.block-color-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.block-color-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.block-color-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.select-value-color-uiBlue { background-color: rgba(35, 131, 226, .07); }
+.select-value-color-pink { background-color: rgba(245, 224, 233, 1); }
+.select-value-color-purple { background-color: rgba(232, 222, 238, 1); }
+.select-value-color-green { background-color: rgba(219, 237, 219, 1); }
+.select-value-color-gray { background-color: rgba(227, 226, 224, 1); }
+.select-value-color-transparentGray { background-color: rgba(227, 226, 224, 0); }
+.select-value-color-translucentGray { background-color: rgba(0, 0, 0, 0.06); }
+.select-value-color-orange { background-color: rgba(250, 222, 201, 1); }
+.select-value-color-brown { background-color: rgba(238, 224, 218, 1); }
+.select-value-color-red { background-color: rgba(255, 226, 221, 1); }
+.select-value-color-yellow { background-color: rgba(249, 228, 188, 1); }
+.select-value-color-blue { background-color: rgba(211, 229, 239, 1); }
+.select-value-color-pageGlass { background-color: undefined; }
+.select-value-color-washGlass { background-color: undefined; }
+
+.checkbox {
+	display: inline-flex;
+	vertical-align: text-bottom;
+	width: 16;
+	height: 16;
+	background-size: 16px;
+	margin-left: 2px;
+	margin-right: 5px;
+}
+
+.checkbox-on {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+.checkbox-off {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+	
+</style></head><body><article id="106fc237-b60b-8099-b6a3-f0c3dabf6a0b" class="page sans"><header><h1 class="page-title">Pujo Directions</h1><p class="page-description"></p></header><div class="page-body"><h3 id="ffffc237-b60b-8191-87da-e9e1140e4b73" class="block-color-brown">Experience Durga Pujo like never before with our feature-packed app designed to make your Pujo exploration seamless, safe, and fun.</h3><p id="ffffc237-b60b-8187-848b-ceb790ede5e0" class="">
+</p><div id="ffffc237-b60b-811a-8d4f-d0ade9c89b46" class="column-list"><div id="ffffc237-b60b-81a7-8fe7-c9bec1a1dd39" style="width:50%" class="column"><p id="ffffc237-b60b-8101-837c-fe4ebfff404a" class="">
+</p><figure class="block-color-red_background callout" style="white-space:pre-wrap;display:flex" id="ffffc237-b60b-818a-8d05-d70fbe93a5ab"><div style="font-size:1.5em"><img class="icon" src="Pujo%20Directions%20106fc237b60b8099b6a3f0c3dabf6a0b/compass-east.png"/></div><div style="width:100%"><strong>Explore Kolkata’s Best Pujo Pandals</strong><p id="ffffc237-b60b-8187-97a4-e75286cd6806" class="">Discover the most stunning pandals across Kolkata, organized by location for easy exploration.</p></div></figure><p id="ffffc237-b60b-8121-adcf-c8fbc6a406d1" class="">
+</p><figure class="block-color-blue_background callout" style="white-space:pre-wrap;display:flex" id="ffffc237-b60b-81b0-8aa4-eab8299b72f8"><div style="font-size:1.5em"><span class="icon">🚨</span></div><div style="width:100%"><strong>Emergency Helpline &amp; Safety Features</strong><p id="10afc237-b60b-80cd-8629-cbef0d038bcc" class="">Quickly find and contact the nearest police station with our built-in locate feature for a safer Pujo.</p></div></figure><p id="ffffc237-b60b-814e-9f76-cc00d3b514b5" class="">
+</p><figure class="block-color-yellow_background callout" style="white-space:pre-wrap;display:flex" id="ffffc237-b60b-8113-a127-e8c8e688c863"><div style="font-size:1.5em"><img class="icon" src="Pujo%20Directions%20106fc237b60b8099b6a3f0c3dabf6a0b/ai-technology.png"/></div><div style="width:100%"><strong>Pujo GPT: Your AI Pujo Guide</strong><p id="ffffc237-b60b-81cb-a1e4-c251966b54dc" class="">Get instant answers about Durga Pujo from Pujo GPT, and contribute to make it smarter with your insights.</p></div></figure></div><div id="ffffc237-b60b-815f-ba27-e56adf7aa477" style="width:50%" class="column"><figure id="ffffc237-b60b-8180-8801-e7a8c9748ebc" class="image"><a href="Pujo%20Directions%20106fc237b60b8099b6a3f0c3dabf6a0b/1.png"><img style="width:1080px" src="Pujo%20Directions%20106fc237b60b8099b6a3f0c3dabf6a0b/1.png"/></a></figure><p id="106fc237-b60b-80f8-80b2-e34833606cf9" class="">
+</p></div></div><p id="ffffc237-b60b-8142-9265-d8c29c134c8d" class="">
+</p><p id="ffffc237-b60b-813b-b730-d16968ce2327" class="">
+</p><hr id="ffffc237-b60b-8179-9aac-e8746795f023"/><h2 id="ffffc237-b60b-8131-bf46-ef2ac6fc2a4b" class="">Sign-up to get early access to the app ✨</h2>
+
+<iframe
+  id="JotFormIFrame-242664101121037"
+  title="Get Early Access to Pujo Directions! Be the first to explore Kolkata's Durga Pujo with our app. Enter your email to join the exclusive early access list!"
+  onload="window.parent.scrollTo(0,0)"
+  allowtransparency="true"
+  allow="geolocation; microphone; camera; fullscreen"
+  src="https://form.jotform.com/242664101121037"
+  frameborder="0"
+  style="min-width:100%;max-width:100%;height:450px;border:none;"
+  scrolling="no"
+></iframe>
+<script src='https://cdn.jotfor.ms/s/umd/latest/for-form-embed-handler.js'></script>
+<script>
+  window.jotformEmbedHandler("iframe[id='JotFormIFrame-242664101121037']", "https://form.jotform.com/")
+</script>
+
+<hr id="ffffc237-b60b-810e-a1b5-e2f151866168"/><div id="ffffc237-b60b-8191-b35b-ff01a4b6b60e" class="column-list"><div id="ffffc237-b60b-8148-9b01-f29681a11b93" style="width:49.99999999999999%" class="column">
+	<figure id="ffffc237-b60b-81d9-b5af-c9e725c2e005" class="image"><a href="Pujo%20Directions%20106fc237b60b8099b6a3f0c3dabf6a0b/e9218467-3c2c-4d9b-b609-f89d451ca542.png"><img style="width:302.0979020979021px" src="Pujo%20Directions%20106fc237b60b8099b6a3f0c3dabf6a0b/e9218467-3c2c-4d9b-b609-f89d451ca542.png"/></a></figure></div><div id="ffffc237-b60b-8115-a552-de3a9afccbb9" style="width:50%" class="column"><p id="ffffc237-b60b-8119-9671-dbbfd8cd6705" class="">
+</p><h1 id="ffffc237-b60b-81df-b67d-e8db631a45e1" class="">Talk to the in-app community Everything about Pujo</h1><p id="ffffc237-b60b-81ed-b12f-cd207c8fe01b" class="">Join our vibrant in-app community. Share your experiences, ask for recommendations, and engage in lively discussions with fellow Pujo enthusiasts.</p></div></div><p id="ffffc237-b60b-816e-9495-dfaa678c6c67" class="">
+</p><hr id="ffffc237-b60b-81ed-bd7a-e2dfdd795f3f"/><div id="ffffc237-b60b-81c0-8081-cb1f421d19d4" class="column-list"><div id="ffffc237-b60b-81c1-ad77-d26bb5708654" style="width:50.00000000000002%" class="column"><p id="ffffc237-b60b-8152-ac27-f119b48b3203" class="">
+</p><p id="ffffc237-b60b-8145-84b3-d1fadf58961a" class="">
+</p><h1 id="ffffc237-b60b-8105-ad26-f32f0f5fcd18" class="">Emergency Helpline &amp; Safety</h1><p id="ffffc237-b60b-81e4-a24a-f63605448b35" class="">Easily find and contact the nearest police station for your safety. Our app’s locate button ensures help is always just a tap away.</p><p id="ffffc237-b60b-81a6-84f1-d5af7a46ca06" class="">
+</p></div><div id="ffffc237-b60b-815d-8c6b-f7b8b34dedcb" style="width:50%" class="column"><figure id="ffffc237-b60b-8148-a14a-d6bbc0887cf5" class="image"><a href="Pujo%20Directions%20106fc237b60b8099b6a3f0c3dabf6a0b/925dd992-c8eb-47a1-9533-d8f584c02886.png"><img style="width:256.95167286245356px" src="Pujo%20Directions%20106fc237b60b8099b6a3f0c3dabf6a0b/925dd992-c8eb-47a1-9533-d8f584c02886.png"/></a></figure></div></div><p id="ffffc237-b60b-81ff-89e6-e0a540ecd508" class="">
+</p><hr id="ffffc237-b60b-81a5-b269-e6bc326a6b5b"/><p id="ffffc237-b60b-813c-a389-c13aa0a32104" class="">
+</p><div id="ffffc237-b60b-8145-afbd-f0b3872de970" class="column-list"><div id="ffffc237-b60b-8106-963b-c4d95690cc70" style="width:50%" class="column"><figure id="7a9646e2-9818-4789-89b6-a6e1ac18bc41" class="image"><a href="Pujo%20Directions%20106fc237b60b8099b6a3f0c3dabf6a0b/Untitled_design_(1).png"><img style="width:1080px" src="Pujo%20Directions%20106fc237b60b8099b6a3f0c3dabf6a0b/Untitled_design_(1).png"/></a></figure></div><div id="ffffc237-b60b-81d5-a811-cea54aa74fc4" style="width:50.00000000000002%" class="column"><h1 id="ffffc237-b60b-81eb-ad60-fc16fd163e15" class="">Introducing Pujo Gpt</h1><p id="ffffc237-b60b-81dc-baaf-df8844658840" class=""><strong>Pujo GPT</strong> is an AI-powered chatbot designed to enhance your Durga Pujo experience. Built using OpenAI and LLaMA technologies, it provides real-time answers about Pujo traditions, events, and pandal locations. Whether you’re curious about rituals, need recommendations, or want local insights, Pujo GPT is your personal guide. Users can also contribute their own experiences to continuously improve the chatbot’s knowledge, making it smarter and more helpful with each interaction.</p></div></div><hr id="ffffc237-b60b-816f-8347-e7db33a55030"/><h2 id="10afc237-b60b-805e-b6d1-de4b1e1cfdf9" class=""><strong>Why Choose Pujo Navigator?</strong></h2><h3 id="7d64af46-c616-42b1-b3fa-f85e202c0ba5" class=""><mark class="highlight-yellow"><strong>User-Centric</strong></mark><mark class="highlight-yellow">: </mark></h3><p id="10afc237-b60b-8063-8892-f3cde32663b8" class="">Created by Pujo lovers, for Pujo lovers. Your safety, convenience, and enjoyment are our top priorities.</p><h3 id="10afc237-b60b-8028-891e-d33bdeb266c8" class=""><mark class="highlight-yellow"><strong>AI-Driven</strong></mark><mark class="highlight-yellow">: </mark></h3><p id="10afc237-b60b-8052-be50-dda68ddde79e" class="">Pujo GPT constantly evolves with user contributions, making the app smarter with every interaction.</p><h3 id="10afc237-b60b-809f-bea7-f2bed5dab9ed" class=""><mark class="highlight-yellow"><strong>Real-Time Updates</strong></mark><mark class="highlight-yellow">: </mark></h3><p id="10afc237-b60b-80de-a235-cb4c6b74c2fe" class="">Stay up-to-date with live news and crowdsourced information directly from the community.</p><p id="ffffc237-b60b-8176-a166-cae331f684ba" class="">
+</p><p id="ffffc237-b60b-818e-a25f-e0b90b4bbbaa" class="">
+</p><p id="ffffc237-b60b-8142-b116-d565e68ea962" class="">
+</p><p id="ffffc237-b60b-8188-9bbb-efa5a10e7297" class="">
+</p></div></article><span class="sans" style="font-size:14px;padding-top:2em"></span></body></html>
